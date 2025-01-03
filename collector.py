@@ -39,7 +39,7 @@ def get_new_filename():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     # Create data directory if it doesn't exist
     os.makedirs('data', exist_ok=True)
-    return os.path.join('data', f'updates_{timestamp}.json')
+    return os.path.join('data', f'updates_{timestamp}.json') # git rm *.json to remove al json files
 
 async def save_orderbook_data(runtime_minutes=350):  # ~5.8 hours
     # First get the list of weekly futures channels
