@@ -41,7 +41,7 @@ def get_new_filename():
     os.makedirs('data', exist_ok=True)
     return os.path.join('data', f'updates_{timestamp}.json') # git rm *.json to remove al json files
 
-async def save_orderbook_data(runtime_minutes=350):  # ~5.8 hours
+async def save_orderbook_data(runtime_minutes=300):  # ~5 hours
     # First get the list of weekly futures channels
     channels = await get_weekly_futures()
     print(f"Subscribing to channels: {channels}")
@@ -93,4 +93,4 @@ def main():
         print("\nData collection stopped by user")
 
 if __name__ == "__main__":
-    main() 
+    main()
